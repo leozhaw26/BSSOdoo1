@@ -42,19 +42,36 @@ z. B. mit euren Namen in den Lanes.
 
 Roter Faden: **Ausgangslage → Prozess (BPMN) → Umsetzung in Odoo (live) → was wir gelernt haben.**
 
-| Zeit | Teil | Wer (Vorschlag bei 4 Personen) | Inhalt |
+Ihr seid **3 Personen**. Jede Person spricht ca. **5 Minuten** (so verlangt es auch das Raster für den späteren GLNW-Vortrag: „je Person ca. 5 Min“). Die Demo ist deshalb **nach Themen** aufgeteilt, nicht streng nach der Reihenfolge 1–7: Person B zeigt alles rund um **Website und Content** (Schritte 1, 2, 3, 7), Person C alles rund um **Verkauf** (Schritte 4, 5, 6 plus Integration).
+
+| Zeit | Wer | Teil | Inhalt |
 |---|---|---|---|
-| 0:00–1:30 | Einstieg | Person A | Firma MyOffice Inc. (Büromöbel, lokal bekannt), Ziel des Cases: *Online-Präsenz aufbauen und online verkaufen*. Die 7 Schritte kurz nennen. |
-| 1:30–4:30 | BPMN | Person A | BPMN 1 (Einrichtung, 7 Schritte) zeigen, dann BPMN 2 (Bestellprozess Kunde ↔ MyOffice). Die BPMN-Elemente erklären (siehe Kap. 2). |
-| 4:30–8:00 | Live-Demo Teil 1 | Person B | Schritte 1–3: Homepage, Produktseite „Office Chair“, SEO |
-| 8:00–12:00 | Live-Demo Teil 2 | Person C | Schritte 4–7: Varianten, Cross-Selling (Garantie), Blog, danach **Testkauf** als Kunde |
-| 12:00–13:30 | Integration | Person C/D | Zeigen, was der Webshop-Kauf im Backend auslöst: Verkaufsauftrag → Lieferung (Lager) → Rechnung (Buchhaltung). **Ein System, abteilungsübergreifend.** |
-| 13:30–15:00 | Learnings & Herausforderungen | Person D | 3–4 konkrete Learnings, Tipps für die anderen Gruppen (siehe Kap. 5) |
-| 15:00–20:00 | Fragen | alle | Mögliche Fragen siehe Kap. 6 |
+| 0:00–1:00 | **A** | Einstieg | Gruppe und Namen vorstellen. Firma MyOffice Inc. (Büromöbel, lokal bekannt), Ziel des Cases: *Online-Präsenz aufbauen und online verkaufen*. Ablauf der nächsten 15 Minuten ansagen. |
+| 1:00–4:00 | **A** | BPMN | BPMN 1 (Einrichtung, 7 Schritte) zeigen, dann BPMN 2 (Bestellprozess Kunde ↔ MyOffice). Die BPMN-Elemente erklären (siehe Kap. 2). |
+| 4:00–8:30 | **B** | Live-Demo: Website & Content | (1) Homepage, (2) Produktseite „Office Chair“ inkl. KI-Text, (3) SEO, (7) Blogbeitrag |
+| 8:30–13:30 | **C** | Live-Demo: Verkauf & Integration | (4) Varianten, (6) Garantie als optionales Produkt, (5) **Testkauf** als Kunde, danach im Backend: Verkaufsauftrag → Lieferung (Lager) → Rechnung (Buchhaltung). **Ein System, abteilungsübergreifend** = BPMN 2 live. |
+| 13:30–15:00 | **A, B, C** | Learnings & Herausforderungen | Jede Person nennt **ein** Learning bzw. eine Herausforderung aus dem eigenen Teil (je ca. 30 Sek., siehe Kap. 5). A schliesst ab und eröffnet die Fragerunde. |
+| 15:00–20:00 | alle | Fragen | Wer den Teil gezeigt hat, beantwortet die Frage dazu (siehe Kap. 6). |
 
-**Bei 3 Personen:** A macht Einstieg + BPMN, B macht Demo Teil 1, C macht Demo Teil 2 + Integration, die Learnings teilt ihr auf (jede Person 1 Learning, gibt ein gutes Bild der Zusammenarbeit).
+Redezeit: A ca. 4:30, B ca. 5:00, C ca. 5:30 Minuten.
 
-Tipps zur Form (das zählt im Raster für den GLNW-Vortrag ebenfalls: frei sprechen, Zeit einhalten, jede Person gleich viel Redezeit):
+**Übergabesätze** (wirken als „abgestimmte Kooperation“ und helfen gegen Hänger):
+
+- A → B: „So sieht der Prozess auf dem Papier aus. B zeigt euch jetzt, wie wir die Website in Odoo aufgebaut haben.“
+- B → C: „Jetzt haben wir eine Website mit Produkt und Blog. C zeigt, wie daraus ein Verkauf wird und was im Hintergrund passiert.“
+- C → Learnings: „Das war genau unser BPMN 2 live. Zum Schluss erzählt jede und jeder von uns, was wir gelernt haben.“
+
+**Wer richtet was in Odoo ein (vor dem Termin)?** Jede Person richtet den Teil ein, den sie auch zeigt. So kann sie Fragen dazu sicher beantworten.
+
+| Person | Einrichtung in Odoo (Kap. 3) | Zusätzlich |
+|---|---|---|
+| A | 3.0 Vorbereitung: gemeinsame Instanz, B und C als **Administrator** einladen, eCommerce- und Blog-App installieren, Website-Assistent | BPMN-Modelle anpassen (z. B. eure Namen in die Lanes) und erklären können |
+| B | 3.1 Homepage, 3.2 Produktseite, 3.3 SEO, 3.7 Blog | Backup-Screenshots der Website |
+| C | 3.4 Varianten, 3.6 Garantie/Cross-Selling, 3.5 Zahlungsanbieter „Demo“, automatische Rechnung, Testkauf | Einen Testkauf komplett bis Lieferung und Rechnung durchspielen |
+
+Tipp für später: Eure 3er-Gruppe muss im Gruppenleistungsnachweis die Bereiche *Verkauf + E-Commerce Shop*, *Einkauf + Lager + Produktion* und *CRM + Marketing* abdecken. Wer den Webshop jetzt einrichtet, hat für *Verkauf + E-Commerce* schon einen Vorsprung.
+
+Tipps zur Form (das zählt im Raster für den GLNW-Vortrag ebenfalls: frei sprechen, Zeit einhalten, ausgewogene Redezeit von ca. 5 Min. pro Person):
 
 - Ohne Folien reicht **ein Browserfenster mit Tabs** in dieser Reihenfolge:
   1. BPMN 1 (PNG oder demo.bpmn.io)
@@ -204,23 +221,35 @@ Damit der Testkauf durchgeht und Odoo danach automatisch weiterarbeitet:
 
 ---
 
-## 4. Demo-Drehbuch (was ihr live klickt, ca. 8–9 Min.)
+## 4. Demo-Drehbuch (was ihr live klickt, ca. 9–10 Min.)
 
 Alles vorher einrichten. Live wird nur **gezeigt** und höchstens **ein kleiner Schritt live ausgeführt**, damit es interaktiv bleibt, aber nichts schiefgehen kann.
 
+**Person B – Website & Content (ca. 4:30)**
+
 1. **Homepage** (Kundensicht, Inkognito): Cover, Kennzahlen mit Verlauf, 3 Spalten. Kurz in den **Bearbeiten**-Modus (Admin-Fenster) und zeigen, wie ein Block per Drag & Drop hinzukommt.
-2. **SEO**: Dialog *SEO optimieren* öffnen, Keyword-Tabelle mit Häkchen und Vorschlägen, Google-Vorschau.
-3. **Produkt**: Backend-Formular Office Chair → Tab **Attribute & Varianten** → Anzeigetyp Farbe mit Hex-Codes → 6 Varianten.
-4. **Kundensicht**: Produktseite mit Farbkreisen und Material-Auswahl → **Purple + Fabric** wählen → *In den Warenkorb* → **Pop-up mit Garantie** (Cross-Selling) → Garantie hinzufügen.
-5. **Checkout** → mit **Demo-Zahlung** bezahlen → Bestellbestätigung.
-6. **Backend (Admin-Fenster)**: Verkaufsauftrag ist bestätigt → **Lieferung** (nur der Stuhl, nicht die Garantie, weil die eine Dienstleistung ist!) → **Rechnung**. Dazu sagen: „Das ist genau unser BPMN 2: Webshop, Lager und Buchhaltung in einem System.“
-7. **Blog**: Beitrag „Discover our 3-year warranty“ kurz zeigen, schliesst den Kreis zu Schritt 6.
+2. **Produktseite** Office Chair: Beschreibung (mit KI erstellt) und Bild. Kurz zeigen, wie man mit **+ Neu → Produkt** ein Produkt direkt auf der Website anlegt.
+3. **SEO**: Dialog *SEO optimieren* öffnen, Keyword-Tabelle mit Häkchen und Vorschlägen, Google-Vorschau.
+4. **Blog**: Beitrag „Discover our 3-year warranty“ zeigen und damit zu C überleiten („… und diese Garantie kann man jetzt direkt beim Stuhl dazukaufen“).
+
+**Person C – Verkauf & Integration (ca. 5:00)**
+
+5. **Varianten**: Backend-Formular Office Chair → Tab **Attribute & Varianten** → Anzeigetyp Farbe mit Hex-Codes → 6 Varianten.
+6. **Garantie**: Produkt „Warranty: 3 years“ (Dienstleistung, 50.–) und das Feld **Optionale Produkte** beim Stuhl zeigen.
+7. **Testkauf** (Inkognito): Produktseite mit Farbkreisen und Material-Auswahl → **Purple + Fabric** → *In den Warenkorb* → **Pop-up mit Garantie** (Cross-Selling) → Garantie hinzufügen → Checkout → mit **Demo-Zahlung** bezahlen → Bestellbestätigung.
+8. **Backend (Admin-Fenster)**: Verkaufsauftrag ist bestätigt → **Lieferung** (nur der Stuhl, nicht die Garantie, weil die eine Dienstleistung ist!) → **Rechnung**. Dazu sagen: „Das ist genau unser BPMN 2: Webshop, Lager und Buchhaltung in einem System.“
 
 ---
 
 ## 5. Learnings und Herausforderungen (Vorschläge – ergänzt eure eigenen!)
 
 Nehmt die Punkte, die ihr **selbst erlebt** habt. Echte Erfahrungen überzeugen mehr als eine Liste.
+
+Vorschlag, wer welches Learning nennt (je ca. 30 Sek.):
+
+- **A:** Prozess vs. Projekt, deshalb zwei BPMN-Modelle
+- **B:** Standardsoftware statt Programmierung (Website, SEO und Blog ohne Code) oder Währung/Steuern bzw. KI-Credits als Herausforderung
+- **C:** Integration in einem System (Bestellung → Lieferung → Rechnung) oder „Garantie muss veröffentlicht sein“ als Tipp an die anderen Gruppen
 
 **Learnings**
 
@@ -261,12 +290,13 @@ Nehmt die Punkte, die ihr **selbst erlebt** habt. Echte Erfahrungen überzeugen 
 ## 7. Checkliste vor dem Termin
 
 - [ ] Case-Zuteilung „Sell Online“ bestätigt
-- [ ] Alle Gruppenmitglieder haben Admin-Zugriff auf **eine** gemeinsame Odoo-Instanz
+- [ ] Alle 3 Gruppenmitglieder haben Admin-Zugriff auf **eine** gemeinsame Odoo-Instanz
 - [ ] eCommerce + Blog installiert, Schritte 1–7 eingerichtet
 - [ ] Zahlungsanbieter „Demo“ im Testmodus aktiv, ein Testkauf komplett durchgespielt (inkl. Lieferung und Rechnung)
 - [ ] BPMN-Dateien in demo.bpmn.io geöffnet, ggf. mit euren Namen ergänzt
 - [ ] Browser-Tabs vorbereitet (BPMN 1, BPMN 2, Backend, Inkognito-Shop)
-- [ ] Rollen verteilt, Probedurchlauf mit Stoppuhr (≤ 15 Min.)
+- [ ] Rollen A/B/C verteilt, Probedurchlauf mit Stoppuhr (≤ 15 Min., je Person ca. 5 Min.)
+- [ ] Übergabesätze geübt, jede Person hat ihr Learning formuliert
 - [ ] Backup-Screenshots, falls WLAN oder Odoo ausfällt (Hinweis: im ZHAW-VPN kann keine Instanz *angelegt* werden, der Zugriff auf eine bestehende funktioniert)
 - [ ] Learnings aus eigener Erfahrung formuliert
 
