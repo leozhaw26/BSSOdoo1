@@ -136,6 +136,25 @@ Tipps zur Form (das zählt im Raster für den GLNW-Vortrag ebenfalls: frei sprec
    - **Website erstellen**, dann Katalog- und Produktseiten-Layout wählen
 4. Hinweis Währung und Steuern: Eure Instanz ist auf **Schweiz/CHF** eingestellt. Der Case rechnet mit **$ und 15 % Steuer**. Nehmt **CHF 120** und die Schweizer **MwSt 8.1 %**. Dann kostet der Stuhl beim Testkauf CHF 129.72 statt $138. Das ist ein gutes *Learning* (Kap. 5).
 
+### Was muss genau wie im PDF sein – was dürft ihr frei wählen?
+
+Faustregel: **Was Sophia oder „You“ in den Sprechblasen verlangen, ist eine Anforderung und wird genau so umgesetzt.** Alles, was nur auf den Beispielbildern zu sehen ist, ist Design und frei wählbar. Das PDF sagt es sogar selbst: *„You can choose a pre-made palette“* und *„Select your favorite online catalog and favorite product page“*.
+
+| Genau so umsetzen (Anforderung) | Frei wählbar (Design) |
+|---|---|
+| Cover oben mit einem **Büro-Bild** als Hintergrund | Welches Büro-Bild genau |
+| Kennzahlen **700+ / 120+ / 15** mit **Verlauf** im Hintergrund | Welcher Verlauf, Farbe, Schrift |
+| **3 Spalten** „You Customize“, „We Design“, „We Manufacture“ (auch auf Deutsch ok) | Bilder und Beschreibungstexte in den Spalten |
+| Produkt **Office Chair**, Preis **120** (CHF statt $), Beschreibung (mit KI) | Produktbild, Layout von Katalog und Produktseite |
+| SEO mit dem Keyword **„office furniture“** | Genaue Formulierung von Titel und Beschreibung (die im PDF sind Beispiele) |
+| Varianten: **Fabric/Leather** und **Grey/White/Purple mit den genauen RGB-Werten** | Anzeigetyp von „Material“ (Radio oder Pills) |
+| Testkauf mit dem **violetten Stuhl** | – |
+| Produkt **Garantie, 3 Jahre, 50**, als **optionales Produkt** beim Stuhl | – |
+| Blogbeitrag über die Garantie im Blog **News** („Discover our 3-year warranty“) | Coverbild des Blogbeitrags |
+| – | Farbpalette, Theme und Schriften im Website-Assistenten |
+
+Das Design wird bei der Scale-Up-Vorstellung nicht bewertet. Das Raster nennt nur BPMN, Live-Demo sowie Learnings und Herausforderungen. Wenn ihr schnell sein wollt, wählt etwas Ähnliches wie im PDF. Eine eigene Wahl dürft ihr in der Demo aber gerne kurz begründen („passt zu Büromöbeln“).
+
 ### 3.1 Schritt 1 – Homepage gestalten
 
 1. **Website** öffnen → oben rechts **Bearbeiten**.
@@ -268,7 +287,7 @@ Vorschlag, wer welches Learning nennt (je ca. 30 Sek.):
 - **Zahlung im Testmodus**: Ohne aktiven Zahlungsanbieter kann man nicht auschecken. „Demo“ im Testmodus ist die einfachste Lösung.
 - **Farbvarianten**: Die Farbe erscheint nur als Farbkreis, wenn beim Attribut der **Anzeigetyp „Farbe“** gewählt ist. Die RGB-Werte müssen als Hex-Code eingegeben werden.
 - **KI-Textfunktion** braucht Credits (IAP) und steht in der Edu-Instanz evtl. nur eingeschränkt zur Verfügung.
-- **Unterschiede zur Case-Vorlage**: Die Screenshots im PDF stammen aus einer anderen Odoo-Version. Menünamen weichen teilweise ab, deshalb lohnt es sich, die Suche in den Einstellungen zu nutzen.
+- **Unterschiede zur Case-Vorlage**: Die Bilder im PDF sind vereinfachte Darstellungen auf Englisch. In der deutschen Instanz heissen Menüs, Buttons und Blöcke anders, deshalb lohnt es sich, die Suche in den Einstellungen zu nutzen.
 
 ---
 
