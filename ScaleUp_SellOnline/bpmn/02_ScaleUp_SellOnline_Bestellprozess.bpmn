@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_Bestellung" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="17.0.0">
+  <bpmn:collaboration id="Collab_Bestellung">
+    <bpmn:participant id="Pool_Kunde" name="Kunde (Online-Besucher)" processRef="Process_Kunde" />
+    <bpmn:participant id="Pool_MyOffice2" name="MyOffice Inc." processRef="Process_MyOffice" />
+    <bpmn:messageFlow id="Msg1" name="Bestellung + Zahlung" sourceRef="K5" targetRef="MS" />
+    <bpmn:messageFlow id="Msg2" name="Bestätigung" sourceRef="M3" targetRef="KC1" />
+    <bpmn:messageFlow id="Msg3" name="Lieferung" sourceRef="L1" targetRef="KC2" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_Kunde" isExecutable="false">
+    <bpmn:startEvent id="KS" name="Bedarf an Bürostuhl festgestellt">
+      <bpmn:outgoing>KF1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="K1" name="Webshop besuchen">
+      <bpmn:incoming>KF1</bpmn:incoming>
+      <bpmn:outgoing>KF2</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="K2" name="Farbe und Material wählen">
+      <bpmn:incoming>KF2</bpmn:incoming>
+      <bpmn:outgoing>KF3</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="K3" name="Bürostuhl in Warenkorb legen">
+      <bpmn:incoming>KF3</bpmn:incoming>
+      <bpmn:outgoing>KF4</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="KG1" name="Garantie gewünscht?">
+      <bpmn:incoming>KF4</bpmn:incoming>
+      <bpmn:outgoing>KF5</bpmn:outgoing>
+      <bpmn:outgoing>KF6</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="K4" name="Garantie (3 Jahre) hinzufügen">
+      <bpmn:incoming>KF5</bpmn:incoming>
+      <bpmn:outgoing>KF7</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="KG2" name="">
+      <bpmn:incoming>KF6</bpmn:incoming>
+      <bpmn:incoming>KF7</bpmn:incoming>
+      <bpmn:outgoing>KF8</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="K5" name="Bestellung aufgeben und bezahlen">
+      <bpmn:incoming>KF8</bpmn:incoming>
+      <bpmn:outgoing>KF9</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:intermediateCatchEvent id="KC1" name="Bestellbestätigung erhalten">
+      <bpmn:incoming>KF9</bpmn:incoming>
+      <bpmn:outgoing>KF10</bpmn:outgoing>
+      <bpmn:messageEventDefinition />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:intermediateCatchEvent id="KC2" name="Bürostuhl erhalten">
+      <bpmn:incoming>KF10</bpmn:incoming>
+      <bpmn:outgoing>KF11</bpmn:outgoing>
+      <bpmn:messageEventDefinition />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:endEvent id="KE" name="Bedarf gedeckt">
+      <bpmn:incoming>KF11</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="KF1" name="" sourceRef="KS" targetRef="K1" />
+    <bpmn:sequenceFlow id="KF2" name="" sourceRef="K1" targetRef="K2" />
+    <bpmn:sequenceFlow id="KF3" name="" sourceRef="K2" targetRef="K3" />
+    <bpmn:sequenceFlow id="KF4" name="" sourceRef="K3" targetRef="KG1" />
+    <bpmn:sequenceFlow id="KF5" name="ja" sourceRef="KG1" targetRef="K4" />
+    <bpmn:sequenceFlow id="KF6" name="nein" sourceRef="KG1" targetRef="KG2" />
+    <bpmn:sequenceFlow id="KF7" name="" sourceRef="K4" targetRef="KG2" />
+    <bpmn:sequenceFlow id="KF8" name="" sourceRef="KG2" targetRef="K5" />
+    <bpmn:sequenceFlow id="KF9" name="" sourceRef="K5" targetRef="KC1" />
+    <bpmn:sequenceFlow id="KF10" name="" sourceRef="KC1" targetRef="KC2" />
+    <bpmn:sequenceFlow id="KF11" name="" sourceRef="KC2" targetRef="KE" />
+  </bpmn:process>
+  <bpmn:process id="Process_MyOffice" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_Process_MyOffice">
+      <bpmn:lane id="Lane_Shop" name="Webshop (Odoo)">
+        <bpmn:flowNodeRef>MS</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>M1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>M2</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>M3</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Lager" name="Lager">
+        <bpmn:flowNodeRef>MP1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>L1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>MP2</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ME</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Buha" name="Buchhaltung">
+        <bpmn:flowNodeRef>B1</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="MS" name="Online-Bestellung eingegangen">
+      <bpmn:outgoing>MF1</bpmn:outgoing>
+      <bpmn:messageEventDefinition />
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="M1" name="Zahlung prüfen">
+      <bpmn:incoming>MF1</bpmn:incoming>
+      <bpmn:outgoing>MF2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="M2" name="Verkaufsauftrag bestätigen">
+      <bpmn:incoming>MF2</bpmn:incoming>
+      <bpmn:outgoing>MF3</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sendTask id="M3" name="Bestätigung per E-Mail senden">
+      <bpmn:incoming>MF3</bpmn:incoming>
+      <bpmn:outgoing>MF4</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:parallelGateway id="MP1" name="">
+      <bpmn:incoming>MF4</bpmn:incoming>
+      <bpmn:outgoing>MF5</bpmn:outgoing>
+      <bpmn:outgoing>MF6</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:task id="L1" name="Lieferung versenden">
+      <bpmn:incoming>MF5</bpmn:incoming>
+      <bpmn:outgoing>MF7</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="B1" name="Rechnung erstellen und buchen">
+      <bpmn:incoming>MF6</bpmn:incoming>
+      <bpmn:outgoing>MF8</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:parallelGateway id="MP2" name="">
+      <bpmn:incoming>MF7</bpmn:incoming>
+      <bpmn:incoming>MF8</bpmn:incoming>
+      <bpmn:outgoing>MF9</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:endEvent id="ME" name="Bestellung abgewickelt">
+      <bpmn:incoming>MF9</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="MF1" name="" sourceRef="MS" targetRef="M1" />
+    <bpmn:sequenceFlow id="MF2" name="" sourceRef="M1" targetRef="M2" />
+    <bpmn:sequenceFlow id="MF3" name="" sourceRef="M2" targetRef="M3" />
+    <bpmn:sequenceFlow id="MF4" name="" sourceRef="M3" targetRef="MP1" />
+    <bpmn:sequenceFlow id="MF5" name="" sourceRef="MP1" targetRef="L1" />
+    <bpmn:sequenceFlow id="MF6" name="" sourceRef="MP1" targetRef="B1" />
+    <bpmn:sequenceFlow id="MF7" name="" sourceRef="L1" targetRef="MP2" />
+    <bpmn:sequenceFlow id="MF8" name="" sourceRef="B1" targetRef="MP2" />
+    <bpmn:sequenceFlow id="MF9" name="" sourceRef="MP2" targetRef="ME" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="Diagram_Bestellung">
+    <bpmndi:BPMNPlane id="Plane_Bestellung" bpmnElement="Collab_Bestellung">
+      <bpmndi:BPMNShape id="Pool_Kunde_di" bpmnElement="Pool_Kunde" isHorizontal="true"><dc:Bounds x="150" y="60" width="1780" height="200" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Pool_MyOffice2_di" bpmnElement="Pool_MyOffice2" isHorizontal="true"><dc:Bounds x="150" y="320" width="1780" height="390" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Shop_di" bpmnElement="Lane_Shop" isHorizontal="true"><dc:Bounds x="180" y="320" width="1750" height="130" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Lager_di" bpmnElement="Lane_Lager" isHorizontal="true"><dc:Bounds x="180" y="450" width="1750" height="130" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Buha_di" bpmnElement="Lane_Buha" isHorizontal="true"><dc:Bounds x="180" y="580" width="1750" height="130" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="KS_di" bpmnElement="KS"><dc:Bounds x="200" y="162" width="36" height="36" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="K1_di" bpmnElement="K1"><dc:Bounds x="280" y="140" width="100" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="K2_di" bpmnElement="K2"><dc:Bounds x="420" y="140" width="100" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="K3_di" bpmnElement="K3"><dc:Bounds x="560" y="140" width="100" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="KG1_di" bpmnElement="KG1" isMarkerVisible="true"><dc:Bounds x="700" y="155" width="50" height="50" /><bpmndi:BPMNLabel><dc:Bounds x="690" y="208" width="70" height="27" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="K4_di" bpmnElement="K4"><dc:Bounds x="790" y="140" width="100" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="KG2_di" bpmnElement="KG2" isMarkerVisible="true"><dc:Bounds x="930" y="155" width="50" height="50" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="K5_di" bpmnElement="K5"><dc:Bounds x="1020" y="140" width="100" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="KC1_di" bpmnElement="KC1"><dc:Bounds x="1412" y="162" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="1385" y="128" width="90" height="27" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="KC2_di" bpmnElement="KC2"><dc:Bounds x="1632" y="162" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="1605" y="135" width="90" height="14" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="KE_di" bpmnElement="KE"><dc:Bounds x="1782" y="162" width="36" height="36" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MS_di" bpmnElement="MS"><dc:Bounds x="1052" y="367" width="36" height="36" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="M1_di" bpmnElement="M1"><dc:Bounds x="1120" y="345" width="100" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="M2_di" bpmnElement="M2"><dc:Bounds x="1250" y="345" width="100" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="M3_di" bpmnElement="M3"><dc:Bounds x="1380" y="345" width="100" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MP1_di" bpmnElement="MP1"><dc:Bounds x="1520" y="490" width="50" height="50" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L1_di" bpmnElement="L1"><dc:Bounds x="1600" y="475" width="100" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="B1_di" bpmnElement="B1"><dc:Bounds x="1600" y="605" width="100" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="MP2_di" bpmnElement="MP2"><dc:Bounds x="1750" y="490" width="50" height="50" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ME_di" bpmnElement="ME"><dc:Bounds x="1842" y="497" width="36" height="36" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="KF1_di" bpmnElement="KF1"><di:waypoint x="236" y="180" /><di:waypoint x="280" y="180" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="KF2_di" bpmnElement="KF2"><di:waypoint x="380" y="180" /><di:waypoint x="420" y="180" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="KF3_di" bpmnElement="KF3"><di:waypoint x="520" y="180" /><di:waypoint x="560" y="180" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="KF4_di" bpmnElement="KF4"><di:waypoint x="660" y="180" /><di:waypoint x="700" y="180" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="KF5_di" bpmnElement="KF5"><di:waypoint x="750" y="180" /><di:waypoint x="790" y="180" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="KF6_di" bpmnElement="KF6"><di:waypoint x="725" y="155" /><di:waypoint x="725" y="100" /><di:waypoint x="955" y="100" /><di:waypoint x="955" y="155" /><bpmndi:BPMNLabel><dc:Bounds x="830" y="82" width="25" height="14" /></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="KF7_di" bpmnElement="KF7"><di:waypoint x="890" y="180" /><di:waypoint x="930" y="180" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="KF8_di" bpmnElement="KF8"><di:waypoint x="980" y="180" /><di:waypoint x="1020" y="180" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="KF9_di" bpmnElement="KF9"><di:waypoint x="1120" y="180" /><di:waypoint x="1412" y="180" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="KF10_di" bpmnElement="KF10"><di:waypoint x="1448" y="180" /><di:waypoint x="1632" y="180" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="KF11_di" bpmnElement="KF11"><di:waypoint x="1668" y="180" /><di:waypoint x="1782" y="180" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MF1_di" bpmnElement="MF1"><di:waypoint x="1088" y="385" /><di:waypoint x="1120" y="385" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MF2_di" bpmnElement="MF2"><di:waypoint x="1220" y="385" /><di:waypoint x="1250" y="385" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MF3_di" bpmnElement="MF3"><di:waypoint x="1350" y="385" /><di:waypoint x="1380" y="385" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MF4_di" bpmnElement="MF4"><di:waypoint x="1480" y="385" /><di:waypoint x="1545" y="385" /><di:waypoint x="1545" y="490" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MF5_di" bpmnElement="MF5"><di:waypoint x="1570" y="515" /><di:waypoint x="1600" y="515" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MF6_di" bpmnElement="MF6"><di:waypoint x="1545" y="540" /><di:waypoint x="1545" y="645" /><di:waypoint x="1600" y="645" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MF7_di" bpmnElement="MF7"><di:waypoint x="1700" y="515" /><di:waypoint x="1750" y="515" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MF8_di" bpmnElement="MF8"><di:waypoint x="1700" y="645" /><di:waypoint x="1775" y="645" /><di:waypoint x="1775" y="540" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MF9_di" bpmnElement="MF9"><di:waypoint x="1800" y="515" /><di:waypoint x="1842" y="515" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Msg1_di" bpmnElement="Msg1"><di:waypoint x="1070" y="220" /><di:waypoint x="1070" y="367" /><bpmndi:BPMNLabel><dc:Bounds x="1078" y="280" width="110" height="14" /></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Msg2_di" bpmnElement="Msg2"><di:waypoint x="1430" y="345" /><di:waypoint x="1430" y="198" /><bpmndi:BPMNLabel><dc:Bounds x="1438" y="280" width="65" height="14" /></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Msg3_di" bpmnElement="Msg3"><di:waypoint x="1650" y="475" /><di:waypoint x="1650" y="198" /><bpmndi:BPMNLabel><dc:Bounds x="1658" y="280" width="55" height="14" /></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
