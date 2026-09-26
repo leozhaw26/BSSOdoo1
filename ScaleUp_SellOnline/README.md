@@ -237,7 +237,12 @@ Damit der Testkauf durchgeht und Odoo danach automatisch weiterarbeitet:
 2. Blog **News** wählen, Titel **„Discover our 3-year warranty“ / „Entdecken Sie unsere 3-Jahres-Garantie“** → Speichern.
 3. Titelbereich anklicken → im Stil-Panel **Hintergrund → Kamera-Symbol** → Coverbild wählen (z. B. Handschlag).
 4. Text schreiben, z. B. „An extension of the warranty to enjoy your furniture even more!“, und einen Link zum Office Chair setzen.
-5. **Speichern** und **veröffentlichen**.
+5. **Speichern** und **veröffentlichen**. Neue Blogbeiträge sind in Odoo standardmässig **unveröffentlicht**. Oben rechts im Beitrag den Schalter auf **Veröffentlicht** (grün) stellen.
+6. Kontrolle im **Inkognito-Fenster**: `https://<eure-instanz>.odoo.com/blog` öffnen. Wird der Beitrag nicht angezeigt:
+   - Ist der Schalter wirklich grün? Als Admin seht ihr auch unveröffentlichte Beiträge, Besucher nicht.
+   - Liegt das **Veröffentlichungsdatum** in der Zukunft? Dann ist der Beitrag nur geplant. Datum auf heute setzen (im Backend unter **Website → Site → Blogbeiträge** im Beitrag).
+   - Wurde nach dem Bearbeiten **Speichern** geklickt?
+   - Fehlt im Hauptmenü der Eintrag „Blog/News“? Dann **Website → Site → Menü bearbeiten** und einen Eintrag mit der URL `/blog` hinzufügen.
 
 ---
 
@@ -283,6 +288,7 @@ Vorschlag, wer welches Learning nennt (je ca. 30 Sek.):
 
 - **Währung und Steuern**: Der Case rechnet in $ mit 15 %, die Schweizer Instanz in CHF mit 8.1 % MwSt. Die Beträge weichen deshalb vom PDF ab.
 - **Optionales Produkt erscheint nicht?** Die Garantie muss selbst **auf der Website veröffentlicht** und verkaufbar sein.
+- **Unveröffentlichte Inhalte**: Neue Blogbeiträge (und neu angelegte Produkte) sind oft zuerst nicht veröffentlicht. Als Admin sieht man sie trotzdem, im Inkognito-Fenster nicht. Deshalb jeden Schritt als Besucher kontrollieren.
 - **Als Admin eingeloggt** sieht man den Shop anders (Bearbeiten-Leiste, Admin als Kunde). Testkäufe deshalb im **Inkognito-Fenster** machen.
 - **Zahlung im Testmodus**: Ohne aktiven Zahlungsanbieter kann man nicht auschecken. „Demo“ im Testmodus ist die einfachste Lösung.
 - **Farbvarianten**: Die Farbe erscheint nur als Farbkreis, wenn beim Attribut der **Anzeigetyp „Farbe“** gewählt ist. Die RGB-Werte müssen als Hex-Code eingegeben werden.
