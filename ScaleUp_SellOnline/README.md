@@ -242,6 +242,8 @@ Damit der Testkauf durchgeht und Odoo danach automatisch weiterarbeitet:
    - Ist der Schalter wirklich grün? Als Admin seht ihr auch unveröffentlichte Beiträge, Besucher nicht.
    - Liegt das **Veröffentlichungsdatum** in der Zukunft? Dann ist der Beitrag nur geplant. Datum auf heute setzen (im Backend unter **Website → Site → Blogbeiträge** im Beitrag).
    - Wurde nach dem Bearbeiten **Speichern** geklickt?
+   - Steht der Beitrag im **richtigen Blog**? Wenn es mehrere Blogs gibt (z. B. „Unser Blog“ und „Neuigkeiten“), zeigt die Menüseite nur die Beiträge *ihres* Blogs. In der Liste **Website → Site → Blogbeiträge** die Spalte **Blog** prüfen und im Beitrag bei Bedarf umstellen.
+   - Schnelltest: Die URL des Beitrags (`/blog/<blog-name>/<beitrag>`) ins Inkognito-Fenster kopieren. Erscheint er dort, ist er veröffentlicht, und das Problem liegt beim Blog oder Menü. Erscheint „Seite nicht gefunden“, ist er nicht veröffentlicht oder das Datum liegt in der Zukunft.
    - Fehlt im Hauptmenü der Eintrag „Blog/News“? Dann **Website → Site → Menü bearbeiten** und einen Eintrag mit der URL `/blog` hinzufügen.
 
 ---
