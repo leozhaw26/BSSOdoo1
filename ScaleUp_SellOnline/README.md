@@ -135,6 +135,12 @@ Tipps zur Form (das zählt im Raster für den GLNW-Vortrag ebenfalls: frei sprec
    - Zusatzfunktion **News/Blog** anhaken (braucht ihr für Schritt 7)
    - **Website erstellen**, dann Katalog- und Produktseiten-Layout wählen
 4. Hinweis Währung und Steuern: Eure Instanz ist auf **Schweiz/CHF** eingestellt. Der Case rechnet mit **$ und 15 % Steuer**. Nehmt **CHF 120** und die Schweizer **MwSt 8.1 %**. Dann kostet der Stuhl beim Testkauf CHF 129.72 statt $138. Das ist ein gutes *Learning* (Kap. 5).
+5. **Welche Website sehen Besucher?** Eine Odoo-Instanz kann **mehrere Websites** haben, oft die Standard-Website „My Website“ und die vom Assistenten erstellte „Website“. Erkennbar ist das am Umschalter **„Website ▾“** oben in der Admin-Leiste. Besucher ohne Login landen auf der Website, die zur Adresse passt, sonst auf der obersten in der Liste. So verknüpft ihr *eure* Website mit der Adresse:
+   - **Website → Konfiguration → Einstellungen** → oben die Website wählen, auf der ihr arbeitet → Feld **Domain**: `https://<eure-instanz>.odoo.com` → **Speichern**.
+   - Bei der anderen Website muss das Feld **Domain** leer sein.
+   - Alternative: Unter **Website → Konfiguration → Websites** eure Website ganz nach oben ziehen.
+   - „My Website“ nicht einfach löschen, Umstellen reicht.
+   - Kontrolle: Im Inkognito-Fenster müssen Menü, Fusszeile und Tab-Titel gleich aussehen wie als Admin.
 
 ### Was muss genau wie im PDF sein – was dürft ihr frei wählen?
 
@@ -239,6 +245,7 @@ Damit der Testkauf durchgeht und Odoo danach automatisch weiterarbeitet:
 4. Text schreiben, z. B. „An extension of the warranty to enjoy your furniture even more!“, und einen Link zum Office Chair setzen.
 5. **Speichern** und **veröffentlichen**. Neue Blogbeiträge sind in Odoo standardmässig **unveröffentlicht**. Oben rechts im Beitrag den Schalter auf **Veröffentlicht** (grün) stellen.
 6. Kontrolle im **Inkognito-Fenster**: `https://<eure-instanz>.odoo.com/blog` öffnen. Wird der Beitrag nicht angezeigt:
+   - **404-Seite mit anderem Menü/Fusszeile als beim Admin** (Tab-Titel z. B. „… | My Website“)? Dann sieht der Besucher eine **andere Website**. Lösung siehe 3.0, Punkt 5 (Domain bei eurer Website eintragen). Das betrifft dann auch Homepage, Produkte und SEO.
    - Ist der Schalter wirklich grün? Als Admin seht ihr auch unveröffentlichte Beiträge, Besucher nicht.
    - Liegt das **Veröffentlichungsdatum** in der Zukunft? Dann ist der Beitrag nur geplant. Datum auf heute setzen (im Backend unter **Website → Site → Blogbeiträge** im Beitrag).
    - Wurde nach dem Bearbeiten **Speichern** geklickt?
@@ -275,7 +282,7 @@ Nehmt die Punkte, die ihr **selbst erlebt** habt. Echte Erfahrungen überzeugen 
 Vorschlag, wer welches Learning nennt (je ca. 30 Sek.):
 
 - **Albin:** Prozess vs. Projekt, deshalb zwei BPMN-Modelle
-- **Cem:** Standardsoftware statt Programmierung (Website, SEO und Blog ohne Code) oder Währung/Steuern bzw. KI-Credits als Herausforderung
+- **Cem:** Zwei Websites in einer Instanz – Besucher sahen die falsche (siehe Herausforderungen, sehr gutes echtes Beispiel!) oder Standardsoftware statt Programmierung (Website, SEO und Blog ohne Code) oder Währung/Steuern bzw. KI-Credits als Herausforderung
 - **Leorat:** Integration in einem System (Bestellung → Lieferung → Rechnung) oder „Garantie muss veröffentlicht sein“ als Tipp an die anderen Gruppen
 
 **Learnings**
@@ -290,6 +297,7 @@ Vorschlag, wer welches Learning nennt (je ca. 30 Sek.):
 
 - **Währung und Steuern**: Der Case rechnet in $ mit 15 %, die Schweizer Instanz in CHF mit 8.1 % MwSt. Die Beträge weichen deshalb vom PDF ab.
 - **Optionales Produkt erscheint nicht?** Die Garantie muss selbst **auf der Website veröffentlicht** und verkaufbar sein.
+- **Zwei Websites in einer Instanz** (bei uns selbst passiert): Wir haben alles auf der Website „Website“ gebaut, Besucher landeten aber auf „My Website“ und bekamen beim Blogbeitrag eine 404-Seite. Erkannt haben wir es am anderen Menü, an der anderen Fusszeile und am Tab-Titel. Gelöst haben wir es, indem wir unter *Website → Konfiguration → Einstellungen* die Domain bei der richtigen Website eingetragen haben. Learning: Odoo ist **mehrwebsitefähig** (ähnlich wie die Mandantenfähigkeit bei Weber, Kap. 3.3.3), und jeder Inhalt gehört zu einer bestimmten Website.
 - **Unveröffentlichte Inhalte**: Neue Blogbeiträge (und neu angelegte Produkte) sind oft zuerst nicht veröffentlicht. Als Admin sieht man sie trotzdem, im Inkognito-Fenster nicht. Deshalb jeden Schritt als Besucher kontrollieren.
 - **Als Admin eingeloggt** sieht man den Shop anders (Bearbeiten-Leiste, Admin als Kunde). Testkäufe deshalb im **Inkognito-Fenster** machen.
 - **Zahlung im Testmodus**: Ohne aktiven Zahlungsanbieter kann man nicht auschecken. „Demo“ im Testmodus ist die einfachste Lösung.
@@ -320,6 +328,7 @@ Vorschlag, wer welches Learning nennt (je ca. 30 Sek.):
 - [ ] Case-Zuteilung „Sell Online“ bestätigt
 - [ ] Alle 3 Gruppenmitglieder haben Admin-Zugriff auf **eine** gemeinsame Odoo-Instanz
 - [ ] eCommerce + Blog installiert, Schritte 1–7 eingerichtet
+- [ ] Im Inkognito-Fenster geprüft: Besucher sehen **eure** Website (gleiches Menü und gleiche Fusszeile wie als Admin), mit Homepage, Office Chair und Blogbeitrag
 - [ ] Zahlungsanbieter „Demo“ im Testmodus aktiv, ein Testkauf komplett durchgespielt (inkl. Lieferung und Rechnung)
 - [ ] BPMN-Dateien in demo.bpmn.io geöffnet, ggf. mit euren Namen ergänzt
 - [ ] Browser-Tabs vorbereitet (BPMN 1, BPMN 2, Backend, Inkognito-Shop)
