@@ -6,7 +6,7 @@
 
 **So ist das Drehbuch aufgebaut**
 
-- Die Texte in den grauen Kästen (`>`) sind der **Sprechtext**. Ihr müsst ihn nicht auswendig lernen. Lest ihn ein paarmal durch und sagt es dann **in euren eigenen Worten** (frei sprechen zählt in der Bewertung).
+- Die Texte in den **grauen Kästen** sind der **Sprechtext**. Ihr müsst ihn nicht auswendig lernen. Lest ihn ein paarmal durch und sagt es dann **in euren eigenen Worten** (frei sprechen zählt in der Bewertung).
 - Die **📋 Regie**-Notizen sagen, was die Person gerade **klickt** und was auf dem Bildschirm **zu sehen** ist.
 - ⏱ gibt an, wo ihr zeitlich stehen solltet.
 

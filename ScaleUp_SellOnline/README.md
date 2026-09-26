@@ -28,6 +28,7 @@ Gruppe: **Albin Ahmetaj, Cem Durdu, Leorat Krasniqi**
 ScaleUp_SellOnline/
 ├── README.md                                   ← dieser Leitfaden
 ├── Drehbuch_Praesentation.md                   ← Sprechtext + Regie-Notizen für Albin, Cem, Leorat
+├── Drehbuch_Praesentation.pdf                  ← dasselbe als PDF zum Ausdrucken
 └── bpmn/
     ├── 01_ScaleUp_SellOnline_Einrichtung.bpmn    ← BPMN 1: der Case (7 Schritte), in demo.bpmn.io öffnen
     ├── 01_ScaleUp_SellOnline_Einrichtung.png/.svg
