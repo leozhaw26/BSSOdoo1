@@ -27,6 +27,7 @@ Gruppe: **Albin Ahmetaj, Cem Durdu, Leorat Krasniqi**
 ```
 ScaleUp_SellOnline/
 ├── README.md                                   ← dieser Leitfaden
+├── Drehbuch_Praesentation.md                   ← Sprechtext + Regie-Notizen für Albin, Cem, Leorat
 └── bpmn/
     ├── 01_ScaleUp_SellOnline_Einrichtung.bpmn    ← BPMN 1: der Case (7 Schritte), in demo.bpmn.io öffnen
     ├── 01_ScaleUp_SellOnline_Einrichtung.png/.svg
@@ -40,6 +41,8 @@ z. B. mit eurem Gruppennamen im Pool. In den Lanes stehen bewusst **Rollen** und
 ---
 
 ## 1. Ablauf der Präsentation (15 Min. + 5 Min. Fragen)
+
+> 🎤 Den ausformulierten Sprechtext für jede Person, mit Regie-Notizen (was klicken, was zeigen), findet ihr in **[Drehbuch_Praesentation.md](Drehbuch_Praesentation.md)**.
 
 Roter Faden: **Ausgangslage → Prozess (BPMN) → Umsetzung in Odoo (live) → was wir gelernt haben.**
 
